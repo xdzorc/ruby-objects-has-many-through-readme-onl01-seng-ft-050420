@@ -1,9 +1,6 @@
 class Waiter
- 
   attr_accessor :name, :yrs_experience
- 
   @@all = []
- 
   def initialize(name, yrs_experience)
     @name = name
     @yrs_experience = yrs_experience
@@ -20,7 +17,8 @@ class Waiter
   
   def meals
     Meal.all.select do |meal|
-    meal.waiter == self 
+      meal.waiter == self 
+    end
   end
   
   def best_tipper
